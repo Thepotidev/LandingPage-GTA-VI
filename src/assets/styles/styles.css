@@ -1,0 +1,198 @@
+@font-face {
+    font-family: GTA;
+    src: url(/fonts/gta-regular.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: GTA;
+    src: url(/fonts/gta-bold.woff) format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: GTA;
+    src: url(/fonts/gta-semibold.woff) format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: GTANarrow;
+    src: url(/fonts/gta-narrow.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    border: unset;
+    outline: 0;
+    text-decoration: unset;
+    background-color: #111;
+    color: white;
+
+    width: 100%;
+    height: 300vh;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+#hero-key-logo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero-key-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#hero-key {
+    height: 100vh;
+    width: 100vw;
+    transform: scale(1.25); /* Escala inicial al 125% */
+    display: block;
+    overflow: hidden;
+    position: fixed;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 42px;
+    z-index: 10;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.LogoVI {
+    width: 24px;
+    filter: invert(1);
+    position: fixed;
+}
+
+.LogoVI:hover {
+    filter: invert(88%) sepia(93%) saturate(7492%) hue-rotate(10deg) brightness(101%) contrast(101%);
+}
+
+.hero-play-button {
+    filter: invert(1) blur();
+    border-radius: 26px;
+    margin: auto;
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    top: 46px;
+    right: 56px;
+    position: fixed;
+}
+
+.hero-play-button:hover {
+    transform: scale(1.10);
+    transition: transform 0.5s;
+}
+
+.hero-footer {
+    position: fixed;
+    bottom: 32px;
+    margin: auto;
+    filter: invert(1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    right: 26px;
+}
+
+.hero-footer img {
+    width: 130px;
+    filter: invert(1) brightness(0)
+        drop-shadow(0 0 16px #fff)
+        drop-shadow(0 0 32px #fff)
+        drop-shadow(0 0 48px #fff);
+}
+
+.ver-trailer {
+    position: absolute;
+    display: flex;
+    top: 30px;
+    color: #020202;
+    text-transform: uppercase;
+    font-family: GTA, system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: 6px;
+    white-space: nowrap;
+    text-align: center;
+    text-shadow: invert(1) brightness(0)
+        drop-shadow(0 0 12px #fff)
+        drop-shadow(0 0 24px #fff);
+}
+
+.keepScrolling {
+    position: fixed;
+    bottom: 8px;
+    right: 0;
+    left: 0;
+    color: white;
+    filter: invert(93%) sepia(18%) saturate(7492%) hue-rotate(305deg) brightness(105%) contrast(101%)
+        drop-shadow(0 0 2px #ff7be9)
+        drop-shadow(0 0 4px #ff7be9);
+    display: flex;
+    justify-content: center;
+    right: 50px;
+    animation: bounce-pulse 2s infinite;
+}
+
+@keyframes bounce-pulse {
+    0% {
+        transform: translateY(0)
+        scale(0.8);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-5px) 
+        scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0)
+        scale(0.8);
+        opacity: 0.8;
+    }
+}
+
+.logo-mask {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    mask-image: url(/src/assets/logo-stack.svg);
+    mask-position: center 25%;
+    mask-repeat: no-repeat;
+    mask-size: clamp(5500vh, 3500%, 0vh);
+}
